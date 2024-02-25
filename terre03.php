@@ -54,10 +54,11 @@ if (strlen($lettre_saisie) != 1){
 	}
 
 if ($argc == 2){
+	if (strlen($lettre_saisie) == 1){
 	printAlphabetSince();
 	echo "\n";
+	}
 }
-
 
 
 
