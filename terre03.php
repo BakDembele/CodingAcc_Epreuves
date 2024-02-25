@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 $alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // $alphabet = [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122];  // De "a" à "z" en code ASCII. 
@@ -49,21 +45,24 @@ if ($argc > 2){
 	echo "Une seule lettre s'il vous plaît. \n";
 }
 
-if (strlen($lettre_saisie) != 1){
+if (strlen($lettre_saisie) > 1){
+	$lettre_saisie = 0;
 	echo "Un seul caractère s'il vous plaît. \n";
+}
+
+if (strlen($lettre_saisie) < 1){
+	$lettre_saisie = 0;
+	echo "Tapez une lettre en argument s'il vous plaît. \n";
 	}
 
 if ($argc == 2){
 	if (strlen($lettre_saisie) == 1){
+		// if ($lettre_saisie != preg_match([a-z], $lettre_saisie)){
 	printAlphabetSince();
 	echo "\n";
+		// }
 	}
 }
-
-
-
-
-
 
 
 //----------------------------------------------//
