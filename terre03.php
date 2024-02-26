@@ -8,10 +8,43 @@ $alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n
 
 // $alphabet = [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122];  // De "a" à "z" en code ASCII. 
 
-$lettre_saisie = $argv[1];  //  La lettre tapée en argument du script.
+$lettre_saisie = "a";  // Initialisation de la variable.   //  La lettre tapée en argument du script.
 
 // echo ord($lettre);  // Code ASCII de la lettre tapée en argument du script. 
 // echo "\n";
+
+// var_dump($lettre_saisie);
+
+/****** S'assurer que l'argument passé au script soit une lettre unique en minuscule ******/
+
+//----------------------------------------------//
+
+// Si pas d'argument !!!
+if ($argc === 1){
+	exit("Veuillez passer un argument au script s'il vous plaît.\n");
+}
+
+// Si nbre d'arguments > 2 (1-->nom du script, 2-->1er argument) !!!
+if ($argc > 2){
+	exit("Une seule lettre s'il vous plaît. \n");
+}
+
+
+$lettre_saisie = $argv[1];
+// echo strlen($lettre_saisie) . "\n";
+
+// Si l'argument fait plus de 1 caractère !!!
+if (strlen($lettre_saisie) > 1){
+	// $lettre_saisie = 0;
+	exit("Un seul caractère s'il vous plaît. \n");
+}
+
+// Test des caractères autorisés !!!
+// if ($lettre_saisie != preg_match([a-z], $lettre_saisie)){
+	
+// }
+
+//----------------------------------------------//
 
 
 
@@ -19,12 +52,17 @@ $lettre_saisie = $argv[1];  //  La lettre tapée en argument du script.
 
 //---------------------------------------------//
 function findKey(){
+	// global $argv;
 	global $lettre_saisie;
+	// var_dump($lettre_saisie);
 	global $alphabet;
 	foreach ($alphabet as $key => $lettre) {
 		if ($lettre_saisie === $lettre) {
 			return $key;
-		}
+		} //else {
+			//echo "Erreur !!!\n";
+			//exit;
+		//}
 	}
 }
 
@@ -38,32 +76,5 @@ function printAlphabetSince(){
 	}	
 }	
 
-/****** S'assurer que l'argument passé au script soit une lettre unique en minuscule ******/
-
-//----------------------------------------------//
-if ($argc > 2){
-	echo "Une seule lettre s'il vous plaît. \n";
-}
-
-if (strlen($lettre_saisie) > 1){
-	$lettre_saisie = 0;
-	echo "Un seul caractère s'il vous plaît. \n";
-}
-
-if (strlen($lettre_saisie) < 1){
-	$lettre_saisie = 0;
-	echo "Tapez une lettre en argument s'il vous plaît. \n";
-	}
-
-if ($argc == 2){
-	if (strlen($lettre_saisie) == 1){
-		// if ($lettre_saisie != preg_match([a-z], $lettre_saisie)){
-	printAlphabetSince();
-	echo "\n";
-		// }
-	}
-}
-
-
-//----------------------------------------------//
-
+printAlphabetSince();
+echo "\n";
