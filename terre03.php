@@ -23,12 +23,12 @@ $lettre_saisie = "a";  // Initialisation de la variable.   //  La lettre tapée 
 //----------------------------------------------//
 
 // Si pas d'argument !!!
-if ($argc === 1){
+if ($argc === 1) {
 	exit("Veuillez passer un argument au script s'il vous plaît.\n");
 }
 
 // Si nbre d'arguments > 2 (1-->nom du script, 2-->1er argument) !!!
-if ($argc > 2){
+if ($argc > 2) {
 	exit("Une seule lettre s'il vous plaît. \n");
 }
 
@@ -38,15 +38,15 @@ $lettre_saisie = $argv[1];	// Mémorisation de l'argument dans la variable prév
 // echo strlen($lettre_saisie) . "\n";
 
 // Si l'argument fait plus de 1 caractère !!!
-if (strlen($lettre_saisie) > 1){
+if (strlen($lettre_saisie) > 1) {
 	// $lettre_saisie = 0;
 	exit("Un seul caractère s'il vous plaît. \n");
 }
 
 // Test des caractères autorisés !!!
-if (ctype_lower($lettre_saisie)){
+if (ctype_lower($lettre_saisie)) {
 	// return true;
-	}else {
+	} else {
 		echo "Seuls les caractères de l'alphabet en minuscule sont autorisés. \n";
 		exit;
 }
@@ -58,7 +58,7 @@ if (ctype_lower($lettre_saisie)){
 /****** Comparer cet argument avec les éléments du tableau $alphabet pour trouver son index ******/
 
 //---------------------------------------------//
-function findKey(){
+function findKey() {
 	// global $argv;
 	global $lettre_saisie;
 	// var_dump($lettre_saisie);
@@ -79,7 +79,7 @@ function findKey(){
 /****** Afficher à partir de $key ******/
 
 //---------------------------------------------//
-function printAlphabetSince(){
+function printAlphabetSince() {
 	global $alphabet;
 	for ($i = findKey(); $i <= 25; $i++) { 
 	echo $alphabet[$i];
