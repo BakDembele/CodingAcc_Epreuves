@@ -15,6 +15,9 @@ $lettre_saisie = "a";  // Initialisation de la variable.   //  La lettre tapée 
 
 // var_dump($lettre_saisie);
 
+
+
+
 /****** S'assurer que l'argument passé au script soit une lettre unique en minuscule ******/
 
 //----------------------------------------------//
@@ -30,7 +33,8 @@ if ($argc > 2){
 }
 
 
-$lettre_saisie = $argv[1];
+$lettre_saisie = $argv[1];	// Mémorisation de l'argument dans la variable prévue à cet effet. 
+
 // echo strlen($lettre_saisie) . "\n";
 
 // Si l'argument fait plus de 1 caractère !!!
@@ -40,11 +44,14 @@ if (strlen($lettre_saisie) > 1){
 }
 
 // Test des caractères autorisés !!!
-// if ($lettre_saisie != preg_match([a-z], $lettre_saisie)){
-	
-// }
-
+if (ctype_lower($lettre_saisie)){
+	// return true;
+	}else {
+		echo "Seuls les caractères de l'alphabet en minuscule sont autorisés. \n";
+		exit;
+}
 //----------------------------------------------//
+
 
 
 
@@ -66,6 +73,9 @@ function findKey(){
 	}
 }
 
+
+
+
 /****** Afficher à partir de $key ******/
 
 //---------------------------------------------//
@@ -75,6 +85,12 @@ function printAlphabetSince(){
 	echo $alphabet[$i];
 	}	
 }	
+
+
+
+/****** !!!!!! Lancement !!!!!! ******/
+
+//---------------------------------------------//
 
 printAlphabetSince();
 echo "\n";
