@@ -28,6 +28,13 @@ if ($argc > 2) {
 $nombre_saisi = $argv[1];
 
 
+if (is_numeric($nombre_saisi)) {
+	$nombre_saisi = (int) $nombre_saisi;
+} else {
+	exit("DES CHIFFRES ON T'AS DIT !!!\n");
+}
+
+
 
 // echo $nombre_saisi;
 // echo "\n";
@@ -40,7 +47,8 @@ $nombre_saisi = $argv[1];
 
 function isEvenOrOdd() {
 	global $nombre_saisi;
-	$nombre_saisi = (int) $nombre_saisi;
+	// $nombre_saisi = (int) $nombre_saisi;
+	// var_dump($nombre_saisi);
 	if (($nombre_saisi % 2) === 0) {
 		echo "Ce nombre est paire. \n";
 	} else {
