@@ -7,13 +7,20 @@
 
 $string_saisie = 0;
 
-$tableau_des_mots = [];
 $tableau_des_caracteres = [];
 
-for ($nombre_de_mots = 1; $nombre_de_mots < $argc ; $nombre_de_mots++) { 
-	$tableau_des_mots[] = $argv[$nombre_de_mots];
-		
-}
 
-var_dump($tableau_des_mots);
+
+$string_saisie = $argv[1];
+
+
+
+var_dump($string_saisie);
+echo "\n";
+var_dump($tableau_des_caracteres);
+echo "\n";
+
+$tableau_des_caracteres = str_split($string_saisie);
+
+var_dump($tableau_des_caracteres);
 echo "\n";
