@@ -32,38 +32,31 @@ if (is_numeric($argv[1]) && is_numeric($argv[2])) {
 	exit("Les arguments doivent être des nombres. \n");
 }
 
-
-var_dump($nombre1);
-echo "\n";
-var_dump($nombre2);
-echo "\n";
-
-
+// var_dump($nombre1);
+// echo "\n";
+// var_dump($nombre2);
+// echo "\n";
+// var_dump($argv);
+// echo "\n";
 //-----------------------------//
 
 
-
-
-
-
-
-
-
+/** Fonction **/
+//------------//
 function divideAndPrintRemain() {
 	global $nombre1;
 	global $nombre2;
 	global $quotient;
 	global $reste;
-/** Vérifications mathématiques **/
-//-------------------------------//
 
-if (($nombre1 != 0) && ($nombre2 = 0)) {
-	exit("Erreur !!!");
-}
+if (($nombre2 === 0) || ($nombre1 < $nombre2)) {
+	exit("Erreur !!!\n");
+	} else {
 	$quotient = (int) ($nombre1 / $nombre2);
-	$reste = (int) ($nombre1 % $nombre2);
-	echo $quotient . "\n";
-	echo $reste . "\n";
+	$reste = $nombre1 % $nombre2;
+	echo "Résultat : " . $quotient . "\n";
+	echo "Reste : " . $reste . "\n";
+	}
 }
 
 divideAndPrintRemain();
