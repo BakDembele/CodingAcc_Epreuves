@@ -32,3 +32,8 @@ echo "\n";
 
 echo count($tableau_des_caracteres);
 echo "\n";
+
+for ($i = (count($tableau_des_caracteres) - 1) ; $i >= 0 ; $i--) { 
+	echo $tableau_des_caracteres[$i];
+}
+echo "\n";
