@@ -9,7 +9,9 @@ $string_saisie = 0;
 
 $tableau_des_caracteres = [];
 
-
+if ($argc != 2) {
+	exit("Nombre d'argument incorrect !!!\n");
+}
 
 $string_saisie = $argv[1];
 
@@ -32,6 +34,7 @@ echo "\n";
 
 echo count($tableau_des_caracteres);
 echo "\n";
+
 
 for ($i = (count($tableau_des_caracteres) - 1) ; $i >= 0 ; $i--) { 
 	echo $tableau_des_caracteres[$i];
