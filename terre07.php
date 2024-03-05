@@ -14,7 +14,7 @@ if ($argc != 2) {
 
 $string_saisie = $argv[1];
 
-if (!(ctype_alpha($string_saisie))) {
+if ((mb_ereg("[0-9]", $string_saisie))) {
 	exit("Caractères invalides !!!\n");
 }
 
