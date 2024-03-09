@@ -12,9 +12,7 @@ function squareRoot(){
 	$nbr = 0;
 	$resultat = 0;
 	global $nombre_saisi;
-	while ($resultat != $nombre_saisi) {
-		$nbr++;
-		$resultat = $nbr * $nbr;
+	for ($nbr=0; ($nbr * $nbr) < $nombre_saisi ; $nbr++) { 
 	}
 	echo $nbr . "\n";
 }
