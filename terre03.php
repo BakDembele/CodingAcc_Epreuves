@@ -24,7 +24,7 @@ $lettre_saisie = "a";  // Initialisation de la variable.   //  La lettre tapée 
 
 // Si pas d'argument !!!
 if ($argc === 1) {
-	exit("Veuillez passer un argument au script s'il vous plaît.\n");
+	exit("L'alphabet à partir de ... \nVeuillez passer un argument au script s'il vous plaît.\n");
 }
 
 // Si nbre d'arguments > 2 (1-->nom du script, 2-->1er argument) !!!
